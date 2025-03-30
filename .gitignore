@@ -1,0 +1,28 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Local development settings
+.env
+.flaskenv
+instance/
+
+# Database files
+app/db/*.json
+!app/db/schema.json
+!app/db/sample.json
+
+# But allow data download scripts
+!app/db/download_data.py
