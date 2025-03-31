@@ -23,6 +23,7 @@ instance/
 app/db/*.json
 !app/db/schema.json
 !app/db/sample.json
+!app/db/.gitkeep
 
 # But allow data download scripts
 !app/db/download_data.py

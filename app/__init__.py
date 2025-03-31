@@ -8,4 +8,7 @@ def create_app():
     from app.routes.card_routes import card_bp
     app.register_blueprint(card_bp)
 
+    from app.routes.rules_routes import rules_bp
+    app.register_blueprint(rules_bp)
+
     return app
