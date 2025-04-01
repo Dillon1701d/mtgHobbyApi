@@ -12,19 +12,17 @@ def create_card_namespace(api):
     class CardSearch(Resource):
         def get(self):
             """
-            Search for cards by name
-            
-            Supports partial name matching
-            Returns up to 50 results
+            Search for cards by name with pagination
             """
             name_query = request.args.get("name", "")
+            page = int(request.args.get("page", 1))
+            per_page = int(request.args.get("per_page", 20))
             
             if not name_query:
                 cards_ns.abort(400, "Missing 'name' query parameter")
             
-            cards = search_cards_by_name(name_query)
-            return cards
-    
+            return search_cards_by_name(name_query, page, per_page)
+        
     # Add the namespace to the API
     api.add_namespace(cards_ns, path='/cards')
     return cards_ns
